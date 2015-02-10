@@ -1,4 +1,4 @@
-# markitup-rails
+# podcloud-markitup-rails
 
 ## Description
 
@@ -50,7 +50,7 @@ This gem requires Ruby 1.9+ and has been tested against the following Ruby versi
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "markitup-rails"
+gem "podcloud-markitup-rails"
 ```
 
 And then execute:
@@ -62,7 +62,7 @@ $ bundle
 Or install it yourself as:
 
 ```
-$ gem install markitup-rails
+$ gem install podcloud-markitup-rails
 ```
 
 
@@ -190,6 +190,12 @@ Many thanks go to the following who have contributed to making this gem even bet
 
 
 ## License
+
+**podcloud-markitup-rails**
+
+* Freely distributable and licensed under the [MIT license](http://phlipper.mit-license.org/2013/license.html).
+* Copyright (c) 2015 Pof Magicfingers (pof@podcloud.fr)
+* http://phlippers.net/
 
 **markitup-rails**
 
