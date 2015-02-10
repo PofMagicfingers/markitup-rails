@@ -186,8 +186,7 @@
 			get();
 		    }
 		    if (textarea === $.markItUp.focused) {
-                        preview();
-                        refreshPreview();
+			markup(settings);
 		    }
 		});
 
@@ -196,7 +195,8 @@
 			get();
 		    }
 		    if (textarea === $.markItUp.focused) {
-			
+		        preview();
+                        refreshPreview();	
 		    }
 		});
 
