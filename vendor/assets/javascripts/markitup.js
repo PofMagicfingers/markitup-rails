@@ -559,24 +559,36 @@
 		    var data = options.previewParser( $$.val() );
 		    writeInPreview(localize(data, 1) ); 
 		} else if (options.previewParserPath !== '') {
+                    $$.trigger("markItUp.preview.update");
 		    $.ajax({
 			type: 'POST',
 			dataType: 'text',
 			global: false,
 			url: options.previewParserPath,
 			data: options.previewParserVar+'='+encodeURIComponent($$.val()),
+                        error: function(xhr, status, error) {
+                            $$.trigger("markItUp.preview.error", [xhr, status, error]);
+                        },
 			success: function(data) {
-			    writeInPreview( localize(data, 1) ); 
+                            $$.trigger("markItUp.preview.updating");
+			    writeInPreview( localize(data, 1) );
+                            $$.trigger("markItUp.preview.updated");
 			}
 		    });
 		} else {
 		    if (!template) {
+                        $$.trigger("markItUp.preview.update");
 			$.ajax({
 			    url: options.previewTemplatePath,
 			    dataType: 'text',
 			    global: false,
+                            error: function(xhr, status, error) {
+                                $$.trigger("markItUp.preview.error", [xhr, status, error]);
+                            },
 			    success: function(data) {
+                                $$.trigger("markItUp.preview.updating");
 				writeInPreview( localize(data, 1).replace(/<!-- content -->/g, $$.val()) );
+                                $$.trigger("markItUp.preview.updated");
 			    }
 			});
 		    }
