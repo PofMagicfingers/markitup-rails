@@ -118,7 +118,6 @@
                     break;
                 case 'refreshPreview':
                     preview();
-                    refreshPreview();
                     break; 
 		default: 
 		    $.error('Method ' +  method + ' does not exist on jQuery.markItUp');
@@ -196,7 +195,6 @@
 		    }
 		    if (textarea === $.markItUp.focused) {
 		        preview();
-                        refreshPreview();	
 		    }
 		});
 
